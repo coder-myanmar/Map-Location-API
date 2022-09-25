@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import Sidebar from "./Pages/Sidebar";
+import Map from "./Pages/Map";
+import { useState } from "react";
 
 function App() {
+  const [selectPosition, setSelectPosition] = useState(null);
+  console.log(selectPosition);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidebar
+        selectPosition={selectPosition}
+        setSelectPosition={setSelectPosition}
+      />
+      <Map selectPosition={selectPosition} />
     </div>
   );
 }
